@@ -1,12 +1,10 @@
-const express = require('express'),
-      app = express();
+const express = require('express');
+const app = express();
 
+const PORT = process.env.PORT || 9000;
 
-app.use(express.static(__dirname + '../dist'));
+app.use(express.static(__dirname + '/../dist'));
 
-
-
-const server = app.listen(process.env.PORT, () =>{
-  const port = server.address().port;
-  console.log("app running now in ", port);
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 })

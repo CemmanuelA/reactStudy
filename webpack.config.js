@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
 
 const htmlPlugin = new HtmlWebPackPlugin ({
   template: "./src/index.html",
@@ -21,6 +22,11 @@ module.exports = {
           }
         },
         {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: ["babel-loader", "eslint-loader"],
+        },
+        {
           test: /\.html$/,
           use : [
             {
@@ -35,6 +41,11 @@ module.exports = {
         }
       ]
     },
+    resolveLoader: {
+      modules: [path.resolve(__dirname,'node_modules')],
+      extensions: ['.js', '.json'],
+      mainFields: ['loaders','main']
+    },
     plugins: [htmlPlugin, cssPlugin],
-    
+
 }
