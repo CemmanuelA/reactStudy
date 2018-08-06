@@ -9,8 +9,10 @@
         "browser": True,
         "es6": true,
         "mongo": true,
+        "node": true,
       },
   "rules": {
+      "react/jsx-filename-extension": ['error', { extensions: ['.js', '.jsx'] }],
       "max-len": [1, 80, 2, {ignoreComments: true}],
       "linebreak-style": 0 ,
       "class-methods-use-this": ['error',{
@@ -28,12 +30,14 @@
         'componentWillUnmount',
         ]
       }],
+      "arrow-body-style": ["error", "always"],
     },
     "parserOptions": {
       "ecmaVersion": 6,
       "ecmaFeatures": {
-        "jsx": true
+        "jsx": true,
+        "classes": true,
         }
       },
-    "extends": ["airbnb-base"]
+    "extends": ['airbnb','plugin:react/recommended']
 }

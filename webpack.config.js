@@ -47,4 +47,4 @@ module.exports = {
     mainFields: ['loaders', 'main'],
   },
   plugins: [htmlPlugin, cssPlugin],
-}
+};

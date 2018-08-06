@@ -1,3 +1,5 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/container/App';
+import Main from './components/container/Main/Main';
+
+ReactDOM.render(<Main />, document.getElementById('root'));
